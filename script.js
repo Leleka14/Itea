@@ -76,31 +76,103 @@
 // 	}
 // }
 
+// noBinding.showText()
+
 // function printFruit(){
-// 	document.write(`${this.name} ${this.color}<br>`)
+// 	document.write(`<h1>${this.name} ${this.color}</h1><br>`)
 // }
 
-const fruits2 = [
-	{
-		name:'banana',
-		color:'yellow'
-	},
-	{
-		name:'lemon',
-		color:'yellow',
-	},
-	{
-		name:'pineapple',
-		color:'brown'
-	}
-]
+// const fruits2 = [
+// 	{
+// 		name:'banana',
+// 		color:'yellow'
+// 	},
+// 	{
+// 		name:'lemon',
+// 		color:'yellow',
+// 	},
+// 	{
+// 		pineapple:'pineapple',
+// 		color:'brown'
+// 	}
+// ]
 
-function printInf(){
-	console.log(this.name, this.color)
-}
+// const info = ['name', 'alex', 'age', 25]
 
-printInf.apply(fruits2)
+// const obj = {}
 
-for(let key in fruits2){
-	printInf.call(fruits2[key])
-}
+
+// // Object.assign(obj, info)
+// console.log(obj)
+
+// function printInf(){
+// 	info.forEach((key, index) => {
+// 	if (index % 2 == 0){
+// 		obj[key]=info[index+1]		
+// 	}
+// })
+
+// 	console.log(`hello im ${this.name} and im ${this.age} years old`)
+// }
+
+// printInf.call(obj)
+
+
+// for(let key in fruits2){
+// 	printInf.call(fruits2[key])
+// 	printFruit.call(fruits2[key])
+// }
+
+// this.table = `window table`
+
+// this.garage = {
+// 	table: `garage table`,
+// }
+
+// class createRoom {
+// 	constructor(name, age){
+// 		this.name = name
+// 		this.age = age
+// 		this.table = `${this.name}s table`
+// 		this.greet = `My name is ${this.name} and I am ${this.age} year's old`
+// 		document.write(this.greet, `<br>`)
+// 	}
+
+// 	cleanTable(soap){
+// 		console.log(`cleaning ${this.table} using ${soap}`)
+// 	}
+// }
+
+// const jillsRoom = new createRoom(`jill`, 12)
+// const johnsRoom = new createRoom(`john`, 20)
+
+// jillsRoom.cleanTable(`some soap`)
+
+// console.log(jillsRoom)
+
+// let btn = document.querySelector('button')
+
+// function createHandeler(element){
+// 	this.handler = function(){
+// 		element.addEventListener('click', (e) => {
+// 			console.log(e.target)
+// 		})
+// 	}
+// }
+
+// const firstHandler = new createHandeler(btn)
+
+// firstHandler.handler()
+
+// function greetFn(greet){
+// 	function end(name){
+// 		return(`${greet} ${name}`);
+// 	};
+// 	return end;
+// };
+
+// let greet = greetFn('hello');
+
+// console.log(greet('alex'));
+
+
