@@ -211,9 +211,9 @@
 // let makeBlue = document.querySelector('.blue')
 // let makeOrange = document.querySelector('.orange')
 
-// let btn = document.querySelector('button')
-// let count = 0
-// let div1 = document.getElementById('text')
+let btn = document.querySelector('button')
+let count = 0
+let div1 = document.getElementById('text')
 
 clickFunction = (element) =>{
 	element.addEventListener('click', () =>{
@@ -223,7 +223,7 @@ clickFunction = (element) =>{
 	})
 }
 
-// clickFunction(btn);
+clickFunction(btn);
 
 
 colorFunction = (id) => {
@@ -231,10 +231,10 @@ colorFunction = (id) => {
 	console.log(array)
 	for(let i in array){
 		if(array[i].nodeName === 'LI'){
-			if(i < 9){
+			if(i < 7){
 				array[i].style.backgroundColor = 'red'
 			}
-			else if(i >= 9 && i < 15){
+			else if(i >= 7 && i < 11){
 				array[i].style.backgroundColor = 'blue'
 			}
 			else{
@@ -249,38 +249,112 @@ colorFunction = (id) => {
 // colorFunction('list')
 
 
-// loopForSetColors = (list, color) => {
-// 	for(let i = 0; i < list.length; i++){
-// 		list[i].style.backgroundColor = color
-// 	}
-// }
+loopForSetColors = (list, color) => {
+	for(let i = 0; i < list.length; i++){
+		list[i].style.backgroundColor = color
+	}
+}
 
-// colorFunction1 = () => {
-// 	const makeRed = document.getElementsByClassName('red')
-// 	const makeBlue = document.getElementsByClassName('blue')
-// 	const makeOrange = document.getElementsByClassName('orange')
-// 	loopForSetColors(makeRed, 'red')
-// 	loopForSetColors(makeBlue, 'blue')
-// 	loopForSetColors(makeOrange, 'orange')
+colorFunction1 = () => {
+	const makeRed = document.getElementsByClassName('red')
+	const makeBlue = document.getElementsByClassName('blue')
+	const makeOrange = document.getElementsByClassName('orange')
+	loopForSetColors(makeRed, 'red')
+	loopForSetColors(makeBlue, 'blue')
+	loopForSetColors(makeOrange, 'orange')
 	
-// }
+}
 
 // colorFunction1()
 
-// const butt = document.getElementById('body')
+const list = document.querySelector('ul')
+let currentStyle
+colorFunction2 = (list) => {
+	list.childNodes.forEach(element => {
+		if(element.nodeType === 8){
+			let styleText = element.nodeValue.trim()
+			currentStyle = styleText.split(' ')
+		}
+		if(element.nodeType === 1){
+			if(currentStyle.length){
+				element.style[currentStyle[0]] = currentStyle[1]
+			}
+		}
+	})
+}
 
-// settingBordersFunction = (element) => {
-// 	element.addEventListener('click', () =>{
-// 		document.body.style.border = 'thick solid #0000FF'
-// 	})
-// }
+// colorFunction2(list)
+
+const butt = document.getElementById('body')
+
+settingBordersFunction = (element) => {
+	element.addEventListener('click', () =>{
+		document.body.style.border = 'thick solid #0000FF'
+	})
+}
 
 // settingBordersFunction(butt)
-// const bodyDiv = document.querySelector('body')
-// const createdH = document.createElement('h1')
-// createdH.textContent = bodyDiv.innerHTML
-// bodyDiv.appendChild(createdH
 
-for(let i = 0; i < document.body.childNodes.length; i++){
-	console.log(document.body.childNodes[i].data)
-}
+// const academy = {
+// 	name: 'ITEA',
+// 	course: 'JS Advanced'
+// };
+
+// Object.defineProperty(academy, 'getFullInfo', {
+// 	get: function () {
+// 		return `Academy: ${this.name}, course: ${this.course}`
+// 	},
+// 	enumarable: true,
+// 	configurable: true
+// })
+
+// console.log(academy.getFullInfo)
+// console.log(academy)
+
+// const academy = {
+// 	students: []
+// }
+
+// Object.defineProperty(academy, 'addStudent', {
+// 	set: function(name){
+// 		let string = name.split(' ')
+// 		this.students.push({
+// 			createdDate: new Date(),
+// 			firstName: string[0],
+// 			secondName: string[1]
+// 		})
+// 	},
+// 	get: function() {
+// 		return this.createDate, this.name, this.surname
+// 	}
+// })
+
+// academy.addStudent = 'Yuriy Petrichenko'
+// console.log(academy)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// for(let i = 0; i < document.body.childNodes.length; i++){
+// 	document.write(document.body.childNodes[i].nodeValue)
+// }
+
+// replaceWithInnnerHTML = () =>{
+// 	const bodyText = document.body.innerHTML
+// 	document.body.innerHTML = `<h1>${bodyText}</h1>`
+// }
+// replaceWithInnnerHTML()
