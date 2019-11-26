@@ -311,26 +311,26 @@ settingBordersFunction = (element) => {
 // console.log(academy.getFullInfo)
 // console.log(academy)
 
-// const academy = {
-// 	students: []
-// }
+const academy = {
+	students: []
+}
 
-// Object.defineProperty(academy, 'addStudent', {
-// 	set: function(name){
-// 		let string = name.split(' ')
-// 		this.students.push({
-// 			createdDate: new Date(),
-// 			firstName: string[0],
-// 			secondName: string[1]
-// 		})
-// 	},
-// 	get: function() {
-// 		return this.createDate, this.name, this.surname
-// 	}
-// })
+Object.defineProperty(academy, 'addStudent', {
+	set: function(name){
+		let string = name.trim().split(' ')
+		this.students.push({
+			createdDate: new Date(),
+			firstName: string[0],
+			secondName: string[1]
+		})
+	},
+	get: function() {
+		return this.createDate, this.name, this.surname
+	}
+})
 
-// academy.addStudent = 'Yuriy Petrichenko'
-// console.log(academy)
+academy.addStudent = ' Yuriy Petrichenko '
+console.log(academy)
 
 const li = document.createElement('li')
 li.textContent = 'hello'

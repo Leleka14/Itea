@@ -10,10 +10,10 @@ h1.addEventListener('mouseover', () => {
 	let leftStyle = coordinates.left;
 	isTrue.style.cssText = `
 	display: block;
-	position: ;
-	text-align: center;
+	position: absolute;
+	left: ${leftStyle}px;
+	top: ${bottomStyle}px;
 	`;
-	  
 })
 h1.addEventListener('mouseleave', () => {
 	isTrue.style.cssText = `
