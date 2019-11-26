@@ -223,7 +223,7 @@ clickFunction = (element) =>{
 	})
 }
 
-clickFunction(btn);
+// clickFunction(btn);
 
 
 colorFunction = (id) => {
@@ -332,29 +332,43 @@ settingBordersFunction = (element) => {
 // academy.addStudent = 'Yuriy Petrichenko'
 // console.log(academy)
 
+const li = document.createElement('li')
+li.textContent = 'hello'
+const list1 = document.querySelector('.list1')
+list1.insertBefore(li, list1.firstElementChild)
 
+const liSecond = document.createElement('li')
+liSecond.textContent = 'tada'
+list1.replaceChild(liSecond, list1.firstElementChild)
 
+list1.firstElementChild.remove()
+list1.removeChild(list1.children[0])
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// for(let i = 0; i < document.body.childNodes.length; i++){
-// 	document.write(document.body.childNodes[i].nodeValue)
-// }
-
-// replaceWithInnnerHTML = () =>{
-// 	const bodyText = document.body.innerHTML
-// 	document.body.innerHTML = `<h1>${bodyText}</h1>`
-// }
+replaceWithInnnerHTML = () =>{
+	const toUpper = document.querySelector('.toUpper')
+	const bodyText = toUpper.textContent
+	toUpper.innerHTML = `<h1>${bodyText}</h1>`
+}
 // replaceWithInnnerHTML()
+
+// replaceWithRemoving = () => {
+// 	const toUpper = document.querySelector('.toUpper')
+// 	const bodyText = toUpper.textContent
+// 	const h1 = document.createElement('h1')
+// 	h1.textContent = bodyText
+// 	const body = document.querySelector('body')
+// 	body.replaceChild(h1, toUpper)
+
+// }
+
+// replaceWithRemoving()
+
+btn.style.cssText = `border: 5px solid green;
+font-size: 20px`
+
+// const btn1 = document.querySelector('#btn');
+// console.log(btn1)
+// btn1.addEventListener('click', () => {
+// 	btn1.classList.toogle("buttonPrimary")
+// });
+

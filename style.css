@@ -1,3 +1,8 @@
 h1{
 	text-align: center;
 }
+
+.buttonPrimary{
+  font-size: 20px;
+  background: blue;
+}
