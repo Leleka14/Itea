@@ -1,0 +1,37 @@
+section{
+    background: #1BA160;
+    display: flex;
+    flex-wrap: wrap;
+    width: 350px;
+    height: 240px;
+}
+.box {
+    width: 50px;
+    height: 50px;
+    background: orange;
+    border: 2px solid #303030;
+    margin: 1em;
+    transition: all 1s;
+}
+.contextMenu{
+    border: 3px solid gray;
+    background: honeydew;
+    display: none;
+}
+.contextMenu ul{
+    padding-left: 0px;
+    margin: 0px;
+}
+.contextMenu ul li{
+    text-transform: uppercase;
+    background: lightsalmon;
+    padding: 10px;
+    list-style: none;
+    font-weight: bold;
+    font-size: 15px;
+    transition: all .3s;
+}
+.contextMenu ul li:hover{
+    cursor: pointer;
+    background: honeydew;
+}

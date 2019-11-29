@@ -1,0 +1,70 @@
+
+header{
+    padding-left: 45%;
+}
+
+button:focus, input:focus{
+    outline: none;
+}
+
+#toDoListWindow{
+	background-color: #8B88E1;
+  	width: min-content;
+  	white-space: nowrap;
+  	border-radius: 10px; 
+  	margin-left: 40%;
+  	padding:10px;
+}
+
+#inputOfTask{
+    border: 5px solid #CCE4F7;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#saveTaskButton{
+	  background: white;
+	  border-radius: 30px;
+}
+
+#importantTaskConfirm{
+    height: 20px;
+	  width: 20px;
+}
+
+#listOfTasks{
+   cursor: pointer;
+}
+
+.contextMenu{
+    border: 3px solid honeydew;
+    background: honeydew;
+    display: none;
+}
+
+.contextMenu ul{
+    padding-left: 0px;
+    margin: 0px;
+}
+.contextMenu ul li{
+    text-transform: uppercase;
+    background: #8B88E1;
+    padding: 10px;
+    list-style: none;
+    font-weight: bold;
+    font-size: 15px;
+    transition: all .3s;
+}
+.contextMenu ul li:hover{
+    cursor: pointer;
+    background: honeydew;
+}
+
+li{
+    transition: all 0.5s ease-in-out;
+}
+
+li:hover{
+    transform: scale(1.05);
+}
+
