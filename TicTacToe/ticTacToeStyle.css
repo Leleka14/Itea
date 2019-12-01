@@ -51,14 +51,22 @@ header{
     font-size: 40px;
 }
 
+#parentDiv{
+    text-align: center;
+}
+
+#childDiv{
+    display: inline-block;
+}
+
 #blocks{
-    background: linear-gradient(to right, rgb(0, 0, 115), rgb(0, 0, 174));;
+    background: linear-gradient(to right, rgb(0, 0, 115), rgb(0, 0, 174));
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     width: min-content;
     white-space: nowrap;
-    padding:30px;
+    padding: 30px;
     border-radius: 50px;
     border: 5px solid #40D482;
     border-top: none;
@@ -82,3 +90,5 @@ header{
 #crossImage, #circleImage{
     width: 20px;
 }
+
+
