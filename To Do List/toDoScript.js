@@ -1,5 +1,5 @@
 
-const clickFunction = () =>{
+const main = () =>{
 	const inputOfTask = document.querySelector('#inputOfTask')
 	const saveTaskButton = document.querySelector('#saveTaskButton')
 	const listOfTasks = document.querySelector('#listOfTasks')
@@ -39,55 +39,37 @@ const clickFunction = () =>{
 
 	listOfTasks.addEventListener('contextmenu', (e) => {
 		e.preventDefault()
+		currentBox = e.target
 		if(e.target.tagName.toLowerCase() === 'li'){
 			showContextMenuWindow(e.clientX, e.clientY)
-			// contextMenu.addEventListener('click', (el) =>{
-			// 	if(el.target && el.target.textContent.toLowerCase() === 'edit'){
-			// 		const changeTask = prompt('Change task to:');
-			// 		e.target.textContent = changeTask
-			// 	}
-			// })
+		}
+	})
+	contextMenu.addEventListener('click', (el) =>{
+		if(el.target && el.target.textContent.toLowerCase() === 'edit'){
+			currentBox.textContent = prompt('Change task to:');
+			contextMenu.style.display = 'none'
+
+		}
+		if(el.target && el.target.textContent.toLowerCase() === 'delete'){
+			currentBox.remove()
+			contextMenu.style.display = 'none'
 		}
 	})
 
-	listOfTasks.addEventListener('dblclick', (e) => {
-		e.target.remove()
+	const showContextMenuWindow = (leftPosition, topPosition) => {
+		contextMenu.style.cssText = `
+		display: inline-block;
+		position: absolute;
+		top: ${topPosition}px;
+		left: ${leftPosition}px;`
+	}
+
+	toDoListWindow.addEventListener('click', (e) =>{
+		if(e.target && e.target.tagName != 'li'){
+			currentBox = e.target
+			contextMenu.style.display = 'none'
+		}
 	})
-
-
-	// const showContextMenuWindow = (leftPosition, topPosition) => {
-	// 	contextMenu.style.cssText = `
-	// 	display: inline-block;
-	// 	position: absolute;
-	// 	top: ${topPosition}px;
-	// 	left: ${leftPosition}px;`
-	// }
-
-	// toDoListWindow.addEventListener('click', (e) =>{
-	// 	if(e.target && e.target.tagName != 'li'){
-	// 		currentBox = e.target
-	// 		contextMenu.style.display = 'none'
-	// 	}
-	// })
-
-	// listOfTasks.addEventListener('click', (e) => {
-	// 	changeTaskFunction = (function(){
-	// 		contextMenu.addEventListener('click', (el) =>{
-	// 			if(el.target && el.target.textContent.toLowerCase() === 'edit'){
-	// 				const changeTask = prompt('Change task to:');
-	// 				e.target.textContent = changeTask
-	// 			}
-	// 		})
-	// 	})()
-	// })
-
 }
 
-// const removeElementsFunction = () => {
-// 	event.target.remove()
-// }
-
-// listOfTasksDiv.addEventListener('dblclick', removeElementsFunction)
-	
-
-clickFunction()
+main()

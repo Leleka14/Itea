@@ -8,7 +8,7 @@ button:focus, input:focus{
 }
 
 #toDoListWindow{
-	background-color: #8B88E1;
+	  background-color: #8B88E1;
   	width: min-content;
   	white-space: nowrap;
   	border-radius: 10px; 
