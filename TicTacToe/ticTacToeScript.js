@@ -130,7 +130,7 @@ app.methods.resetIfDraw = () =>{
 			app.elements.boxContainer.children[x].style.backgroundImage = 'none'
 			firstGoes()
 		}
-	}, 1500)
+	}, 2000)
 	}
 	else{
 		drawConst = 0;
