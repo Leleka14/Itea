@@ -1,57 +1,58 @@
-
-header{
+header {
     text-align: center;
 }
 
-button:focus, input:focus{
+button:focus,
+input:focus {
     outline: none;
 }
 
 
-#parentDiv{
+#parentDiv {
     text-align: center;
 }
 
-#toDoListWindow{
+#toDoListWindow {
     display: inline-block;
-	  background-color: #8B88E1;
-  	width: min-content;
-  	white-space: nowrap;
-  	border-radius: 10px;
-  	padding:10px;
+    background-color: #8B88E1;
+    width: min-content;
+    white-space: nowrap;
+    border-radius: 10px;
+    padding: 10px;
 }
 
-#inputOfTask{
+#inputOfTask {
     border: 5px solid #CCE4F7;
     padding: 5px;
     border-radius: 10px;
 }
 
-#saveTaskButton{
-	  background: white;
-	  border-radius: 30px;
+#saveTaskButton {
+    background: white;
+    border-radius: 30px;
 }
 
-#importantTaskConfirm{
+#importantTaskConfirm {
     height: 20px;
-	  width: 20px;
+    width: 20px;
 }
 
-#listOfTasks{
-   cursor: pointer;
+#listOfTasks {
+    cursor: pointer;
 }
 
-.contextMenu{
+.contextMenu {
     border: 3px solid honeydew;
     background: honeydew;
     display: none;
 }
 
-.contextMenu ul{
+.contextMenu ul {
     padding-left: 0px;
     margin: 0px;
 }
-.contextMenu ul li{
+
+.contextMenu ul li {
     text-transform: uppercase;
     background: #8B88E1;
     padding: 10px;
@@ -60,16 +61,16 @@ button:focus, input:focus{
     font-size: 15px;
     transition: all .3s;
 }
-.contextMenu ul li:hover{
+
+.contextMenu ul li:hover {
     cursor: pointer;
     background: honeydew;
 }
 
-li{
+li {
     transition: all 0.5s ease-in-out;
 }
 
-li:hover{
+li:hover {
     transform: scale(1.05);
 }
-

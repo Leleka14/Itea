@@ -13,57 +13,99 @@ app.elements.players.secondPlayerTurnToGo = `Player 2, your move!`
 app.elements.players.firstPlayerValue = 1;
 app.elements.players.secondPlayerValue = 2;
 app.elements.currentBox = null;
-app.elements.image = null
-for(let i = 0; i < app.elements.boxContainer.children.length; i++){
-	app.elements.boxContainer.children[i].value = 0;
+app.elements.image = null;
+
+for (let i = 0; i < app.elements.boxContainer.children.length; i++) {
+    app.elements.boxContainer.children[i].value = 0;
 }
 
 
-firstGoes = () =>{
-	const randomNumber = (Math.floor(Math.random() * 2));
-	return randomNumber;
+const firstGoes = () => {
+    const randomNumber = (Math.floor(Math.random() * 2));
+    if (randomNumber <= 0.5) {
+    	app.elements.turnToGo.textContent = app.elements.players.firstPlayerTurnToGo;
+	} else {
+    	app.elements.turnToGo.textContent = app.elements.players.secondPlayerTurnToGo;
+	}
 }
 
-const rand = firstGoes();
+firstGoes();
 
-if(rand <= 0.5){
-	app.elements.turnToGo.textContent = app.elements.players.firstPlayerTurnToGo;
-}
-else{
-	app.elements.turnToGo.textContent = app.elements.players.secondPlayerTurnToGo;
-}
+
 
 setImageFunction = (element) => {
-	if(app.elements.turnToGo.textContent === app.elements.players.firstPlayerTurnToGo){
-		app.elements.image = app.elements.players.firstPlayerImage;
-		app.elements.currentBox.value = app.elements.players.firstPlayerValue;
-		app.elements.turnToGo.textContent = app.elements.players.secondPlayerTurnToGo;
-	}
-	else{
-		app.elements.image = app.elements.players.secondPlayerImage;
-		app.elements.currentBox.value = app.elements.players.secondPlayerValue;
-		app.elements.turnToGo.textContent = app.elements.players.firstPlayerTurnToGo;
-	}
-	element.style.cssText = `
+    if (app.elements.turnToGo.textContent === app.elements.players.firstPlayerTurnToGo) {
+        app.elements.image = app.elements.players.firstPlayerImage;
+        app.elements.currentBox.value = app.elements.players.firstPlayerValue;
+        app.elements.turnToGo.textContent = app.elements.players.secondPlayerTurnToGo;
+    } else {
+        app.elements.image = app.elements.players.secondPlayerImage;
+        app.elements.currentBox.value = app.elements.players.secondPlayerValue;
+        app.elements.turnToGo.textContent = app.elements.players.firstPlayerTurnToGo;
+    }
+    element.style.cssText = `
 		background-image: url('Images/${app.elements.image}.png');
 		background-repeat: no-repeat;
 		background-size: 100%;`
 }
 
 app.methods.setBackgroundInClick = (function() {
-	app.elements.boxContainer.addEventListener('click', (e) =>{
-		app.elements.currentBox = e.target;
-		if(app.elements.currentBox.tagName.toLowerCase() === 'div' && app.elements.currentBox.value === 0){
-			setImageFunction(app.elements.currentBox)
-		}
-	})
+    app.elements.boxContainer.addEventListener('click', (e) => {
+        app.elements.currentBox = e.target;
+        if (app.elements.currentBox.tagName.toLowerCase() === 'div' && app.elements.currentBox.value === 0) {
+            setImageFunction(app.elements.currentBox)
+            for(let i = 0; i < app.elements.boxContainer.children.length - 6; i++){
+            	if(app.elements.boxContainer.children[i].value != 0 && app.elements.boxContainer.children[i].value === app.elements.boxContainer.children[i + 3].value){
+            		if( app.elements.boxContainer.children[i + 3].value === app.elements.boxContainer.children[i + 6].value){
+            			app.methods.displayWinner(i)
+            		}
+            	}
+            }
+            for(let i = 0; i < app.elements.boxContainer.children.length - 2; i++){
+            	if(app.elements.boxContainer.children[i].value != 0 && app.elements.boxContainer.children[i].value === app.elements.boxContainer.children[i + 1].value){
+            		if(app.elements.boxContainer.children[i + 1].value === app.elements.boxContainer.children[i + 2].value){
+            			if(i === 0 || i === 3 || i === 6){
+            				app.methods.displayWinner(i)
+            			}
+            		}
+            	}
+            }
+            for(let i = 0; i < app.elements.boxContainer.children.length - 8; i++){
+            	if(app.elements.boxContainer.children[i].value != 0 && app.elements.boxContainer.children[i].value === app.elements.boxContainer.children[i + 4].value){
+            		if(app.elements.boxContainer.children[i + 4].value === app.elements.boxContainer.children[i + 8].value){
+            			app.methods.displayWinner(i)
+            		}
+            	}
+            }
+            for(let i = 0; i < app.elements.boxContainer.children.length - 4; i++){
+            	if(app.elements.boxContainer.children[i].value != 0 && app.elements.boxContainer.children[i].value === app.elements.boxContainer.children[i + 2].value){
+            		if(app.elements.boxContainer.children[i + 2].value === app.elements.boxContainer.children[i + 4].value){
+            			app.methods.displayWinner(i)
+            		}
+            	}
+            }
+        }
+    })
 })()
 
-// app.methods.check = (function() {
-// 	for(let i = 0; i < app.elements.allBoxes.length; i++){
-// 		if()
-// 	}
-// })()
-
-
-
+app.methods.displayWinner = (i) =>{
+	if(app.elements.boxContainer.children[i].value === app.elements.players.firstPlayerValue){
+		app.elements.players.player1ScoreSpan.textContent++;
+		app.elements.turnToGo.textContent = `Player 1 wins`
+	}
+	else{
+		app.elements.players.player2ScoreSpan.textContent++;
+		app.elements.turnToGo.textContent = `Player 2 wins`
+	}
+	for(let x = 0; x < app.elements.boxContainer.children.length; x++){
+		app.elements.boxContainer.children[x].value = 0;
+	}
+	setTimeout(function() {
+		for(let x = 0; x < app.elements.boxContainer.children.length; x++){
+			app.elements.boxContainer.children[x].value = 0;
+			app.elements.boxContainer.children[x].style.backgroundImage = 'none'
+			firstGoes()
+		}
+	}, 2000)
+	
+}
