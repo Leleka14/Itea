@@ -80,10 +80,13 @@ app.methods.setBackgroundInClick = (function() {
             for(let i = 0; i < app.elements.boxContainer.children.length - 4; i++){
             	if(app.elements.boxContainer.children[i].value != 0 && app.elements.boxContainer.children[i].value === app.elements.boxContainer.children[i + 2].value){
             		if(app.elements.boxContainer.children[i + 2].value === app.elements.boxContainer.children[i + 4].value){
-            			app.methods.displayWinner(i)
+            			if(i === 2){
+            				app.methods.displayWinner(i)
+            			}
             		}
             	}
             }
+            app.methods.resetIfDraw()
         }
     })
 })()
@@ -108,4 +111,28 @@ app.methods.displayWinner = (i) =>{
 		}
 	}, 2000)
 	
+}
+
+app.methods.resetIfDraw = () =>{
+	let drawConst = 0;
+	for(let i = 0; i < app.elements.boxContainer.children.length; i++){
+		if(app.elements.boxContainer.children[i].value != 0){
+			drawConst++;
+		}
+	}
+	if(drawConst === 9){
+		app.elements.turnToGo.textContent = `It's a draw`;
+		app.elements.players.player1ScoreSpan.textContent++;
+		app.elements.players.player2ScoreSpan.textContent++;
+		setTimeout(function() {
+		for(let x = 0; x < app.elements.boxContainer.children.length; x++){
+			app.elements.boxContainer.children[x].value = 0;
+			app.elements.boxContainer.children[x].style.backgroundImage = 'none'
+			firstGoes()
+		}
+	}, 2000)
+	}
+	else{
+		drawConst = 0;
+	}
 }
