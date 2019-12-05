@@ -5,19 +5,46 @@ const main = () => {
     const importantTaskConfirm = document.querySelector('#importantTaskConfirm')
     const contextMenu = document.querySelector('.contextMenu')
     let currentBox = null;
+    const user = localStorage.getItem('userData');
+    const inputs = document.querySelectorAll('input');
+    let array = []
+
+    if(user){
+        array = JSON.parse(user)
+        for(let i = 0; i < array.length; i++){
+            const task = document.createElement('li')
+            task.textContent = array[i].text
+            if(array[i].color === `red`){
+                task.style.color = array[i].color
+                listOfTasks.insertBefore(task, listOfTasks.firstElementChild)
+            }
+            else{
+                listOfTasks.appendChild(task)
+            }
+        }
+    }
 
     const clickOnButtonFunction = () => {
         const valueOfInput = inputOfTask.value.trim()
         if (valueOfInput) {
             const newTask = document.createElement('li')
             newTask.textContent = valueOfInput
+            const refreshLi = {}
             if (importantTaskConfirm.checked === true) {
                 newTask.style.cssText = `
 				color: red;`
                 listOfTasks.insertBefore(newTask, listOfTasks.firstElementChild)
+                refreshLi.text = newTask.textContent
+                refreshLi.color = `red`
+                array.push(refreshLi)
+                
             } else {
                 listOfTasks.appendChild(newTask)
+                refreshLi.text = newTask.textContent
+                refreshLi.color = `black`
+                array.push(refreshLi)  
             }
+            localStorage.setItem('userData', JSON.stringify(array))
             inputOfTask.value = ''
         } else {
             alert(`You've entered nothing! Please enter task...`)
@@ -43,11 +70,32 @@ const main = () => {
     })
     contextMenu.addEventListener('click', (el) => {
         if (el.target && el.target.textContent.toLowerCase() === 'edit') {
-            currentBox.textContent = prompt('Change task to:');
+            let editStr = prompt('Change task to:');
+            if(editStr){
+                editStr.trim()
+            }
+            if(editStr){
+                for(let i = 0; i < array.length; i++){
+                    if(array[i].text === currentBox.textContent){
+                        array[i].text = editStr
+                    }
+                }
+                localStorage.setItem('userData', JSON.stringify(array))
+                currentBox.textContent = editStr
+            }
+            else{
+                alert(`You've entered nothing! Please enter task...`)
+            }
             contextMenu.style.display = 'none'
 
         }
-        if (el.target && el.target.textContent.toLowerCase() === 'delete') {
+        if (el.target && el.target.textContent.toLowerCase() === 'delete'){
+            for(let i = 0; i < array.length; i++){
+                if(array[i].text === currentBox.textContent){
+                    array.splice(i, 1)
+                }
+            }
+            localStorage.setItem('userData', JSON.stringify(array))
             currentBox.remove()
             contextMenu.style.display = 'none'
         }

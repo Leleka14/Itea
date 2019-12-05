@@ -92,6 +92,7 @@ app.methods.setBackgroundInClick = (function() {
 })()
 
 app.methods.displayWinner = (i) =>{
+    
 	if(app.elements.boxContainer.children[i].value === app.elements.players.firstPlayerValue){
 		app.elements.players.player1ScoreSpan.textContent++;
 		app.elements.turnToGo.textContent = `Player 1 wins`
