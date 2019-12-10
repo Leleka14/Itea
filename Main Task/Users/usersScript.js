@@ -56,14 +56,10 @@ const getSingleUser = (userID) =>{
 	fetch(`${baseAPI}/users/${userID}`)
 		.then(response => response.json())
 		.then(users =>{
-			
 			resetUsersList()
-			setTimeout(() => {
-				userListContainer.innerHTML += userCard(users.data) 
-				spinner.style.display = 'none'
-			}, )
-			
-		})
+			userListContainer.innerHTML += userCard(users.data) 
+			spinner.style.display = 'none'
+		})	
 		.catch(e => console.log(e))
 }
 

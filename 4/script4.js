@@ -58,10 +58,10 @@
 // }
 
 // localStorage.setItem('user', JSON.stringify(user, (key, value) => {
-//         if(key in replaceProps){
-//             value = replaceProps[key];
-//         }
-//         return value;
+//     if(key in replaceProps){
+//         value = replaceProps[key];
+//     }
+//     return value;
 // }));
 
 // const reviewerFunction = JSON.parse(userFromStorage, (key, value) =>{
