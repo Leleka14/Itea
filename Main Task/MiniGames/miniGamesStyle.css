@@ -1,0 +1,26 @@
+#logo-image {
+    width: 200px;
+}
+
+#login-and-signup {
+    list-style-type: none;
+}
+
+#h1-tag{
+	border-top: 3px solid black;
+}
+
+#paper-scissors-rock, #tic-tac-toe, #h1-tag{
+	text-align: center;
+	transition: all 1s;
+}
+
+#paper-scissors-rock:hover {
+	background-color: black;
+	color: white;
+}
+
+#tic-tac-toe:hover{
+	background-color: #281A7D;
+	color: white;
+}

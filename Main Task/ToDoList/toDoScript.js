@@ -37,7 +37,6 @@ const main = () => {
                 refreshLi.text = newTask.textContent
                 refreshLi.color = `red`
                 array.push(refreshLi)
-                
             } else {
                 listOfTasks.appendChild(newTask)
                 refreshLi.text = newTask.textContent

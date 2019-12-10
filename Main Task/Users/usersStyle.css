@@ -1,0 +1,39 @@
+#logo-image {
+    width: 200px;
+}
+
+#login-and-signup {
+    list-style-type: none;
+}
+
+#spinner {
+    position: absolute;
+    top: calc(50% - 12px);
+    left: calc(50% - 12px);
+    display: none;
+}
+
+#h1-tag {
+    margin-top: 10px;
+    text-align: center;
+    border-top: 3px solid #7d5be8;
+}
+
+#input-of-user-search {
+    padding: 5px;
+    outline: none;
+    border: 3px solid #7d5be8;
+    border-radius: 5px;
+}
+
+#single-card{
+    cursor: pointer;
+}
+
+#user-search-div{
+    text-align: center;
+}
+
+#search-button{
+    height: 40px;
+}

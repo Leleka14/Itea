@@ -1,0 +1,12 @@
+body{
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+#spinner{
+	display: none;
+	position: absolute;
+	top: calc(50% - 12px);
+	left: calc(50% - 12px);
+
+}

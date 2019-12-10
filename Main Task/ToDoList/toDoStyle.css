@@ -1,5 +1,6 @@
 header {
     text-align: center;
+    border-top: 3px solid #8B88E1;
 }
 
 button:focus,
@@ -7,6 +8,13 @@ input:focus {
     outline: none;
 }
 
+#logo-image {
+    width: 200px;
+}
+
+#login-and-signup {
+    list-style-type: none;
+}
 
 #parentDiv {
     text-align: center;
@@ -14,7 +22,7 @@ input:focus {
 
 #toDoListWindow {
     display: inline-block;
-    background-color: #8B88E1;
+    background: #8B88E1;
     width: min-content;
     white-space: nowrap;
     border-radius: 10px;
@@ -35,6 +43,7 @@ input:focus {
 #importantTaskConfirm {
     height: 20px;
     width: 20px;
+    margin-top: 5px;
 }
 
 #listOfTasks {

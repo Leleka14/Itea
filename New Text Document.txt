@@ -1,0 +1,7 @@
+1)To Do List
+2)Weather Forecast
+3)Login
+4)Register
+5)Show other users and search them
+6)Show some goods to buy and add them to shopping list
+7)If weather good(temperature check) set background sunny, otherwise rainy, cloudy, with snow...

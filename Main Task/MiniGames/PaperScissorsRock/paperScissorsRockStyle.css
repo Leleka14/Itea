@@ -7,8 +7,15 @@
 header{
 	text-align: center;
 	padding: 20px;
-	background-color: black;
-	color: white; 
+	border-top: 3px solid black;
+}
+
+#logo-image {
+    width: 200px;
+}
+
+#login-and-signup {
+    list-style-type: none;
 }
 
 .scoreBoard{
