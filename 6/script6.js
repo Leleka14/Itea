@@ -69,14 +69,14 @@ class Audi extends Car{
         
     }
 }
-class Tesla {
+class Tesla extends Car{
     comforts(){
         this.autopilot = true
         this.parctronic = true
         this.conditioner = true
     }
 }
-class Daewoo {
+class Daewoo extends Car{
     comforts(){
         this.autopilot = false
         this.parctronic = false
