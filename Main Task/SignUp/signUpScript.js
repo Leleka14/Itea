@@ -4,9 +4,10 @@ const submitButton = document.querySelector('#submit-button')
 const baseAPI = ' https://reqres.in/api/register'
 let user = {}
 submitButton.addEventListener('click', () =>{
-	if(loginInputField.textContent != '' && passwordInputField != ''){
-		user.name = loginInputField.textContent
-		user.password = passwordInputField.textContent
+	if(loginInputField.value != '' && passwordInputField.value != ''){
+		user.name = loginInputField.value
+		user.password = passwordInputField.value
+		console.log(user)
 		fetch(baseAPI, {
 			method: 'POST',
 			headers: {
