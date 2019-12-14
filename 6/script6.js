@@ -33,55 +33,112 @@
 // milk(defaultCoffee);
 // console.log(defaultCoffee.cost());
 
+// class Car {
+//     constructor(model, year, price, mileage){
+//         this.model = model
+//         this.year = year
+//         this.price = price
+//         this.mileage = mileage
+//     }
+//     getModel(){
+//         return this.model
+//     }
+//     getYear(){
+//         return this.year
+//     }
+//     getPrice(){
+//         return this.price
+//     }
+//     getMileage(){
+//         return this.mileage
+//     }
+// }
 
-class Car {
-    constructor(model, year, price, mileage){
-        this.model = model
-        this.year = year
-        this.price = price
-        this.mileage = mileage
+// class Audi extends Car{
+//     comforts(){
+//         this.autopilot = false
+//         this.parctronic = true
+//         this.conditioner = true
+//     }
+//     prices(){
+//     }
+// }
+// class Tesla extends Car{
+//     constructor(model, year, price, milage){
+//         super(model, year, price, milage)
+//         this.autopilot = true
+//         this.parctronic = true
+//         this.conditioner = true
+//     }
+// }
+// class Daewoo extends Car{
+//     comforts(){
+//         this.autopilot = false
+//         this.parctronic = false
+//         this.conditioner = false
+//     }
+// }
+
+// const a6 = new Tesla('A6', 2013, 15000, 45000);
+
+// const animal = {
+//     name: 'Animal',
+//     age: 5,
+//     hasTail: true
+// }
+
+class Animal{
+
+    static type = 'ANIMAL'
+
+    constructor(options){
+        this.name = options.name
+        this.age = options.age
+        this.hasTail = options.hasTail
     }
-    getMark(){
-        return this.mark
-    }
-    getYear(){
-        return this.year
-    }
-    getPrice(){
-        return this.price
-    }
-    getMileage(){
-        return this.mileage
+    voice(){
+        console.log('I am animal')
     }
 }
 
-// const myCar = new Car('audi', 2012, 15500, 55555)
+// const animal = new Animal({
+//     name: 'Animal', 
+//     age: 5,
+//     hasTail: true 
+// })
 
-// console.log(myCar)
 
-class Audi extends Car{
-    comforts(){
-        this.autopilot = false
-        this.parctronic = true
-        this.conditioner = true
-    }
-    prices(){
-        
-    }
-}
-class Tesla extends Car{
-    comforts(){
-        this.autopilot = true
-        this.parctronic = true
-        this.conditioner = true
-    }
-}
-class Daewoo extends Car{
-    comforts(){
-        this.autopilot = false
-        this.parctronic = false
-        this.conditioner = false
-    }
-}
+// class Cat extends Animal{
+//     static type = 'CAT'
+//     constructor(options){
+//         super(options)
+//         this.color = options.color
+//     }
 
-const a6 = new Audi('A6', 2013, 15000, 45000)
+//     voice(){
+//         super.voice()
+//         console.log('I am cat')
+//     }
+//     get ageInfo(){
+//         return this.age * 7
+//     }
+
+//     set ageInfo(newAge){
+//         this.age = newAge
+//     }
+// }
+
+// const cat = new Cat({
+//     name: 'cat',
+//     age: 7,
+//     hasTail: true,
+//     color: 'black'
+// })
+
+
+
+
+
+
+
+

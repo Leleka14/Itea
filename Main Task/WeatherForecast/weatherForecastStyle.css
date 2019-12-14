@@ -1,7 +1,9 @@
 body{
-	background-image: url('../Images/winter4.png');
+	background-image: url('../Images/winter10.png');
 	background-repeat: no-repeat;
 	background-size: 100%;
+	background-color: ;
+	background-position: static;
 }
 
 #logo-image {
@@ -29,7 +31,7 @@ body{
     border-radius: 5px;
 }
 
-#temperature-h2{
+#text-div{
 	text-align: center;
-	color: white;
+	color: black;
 }
