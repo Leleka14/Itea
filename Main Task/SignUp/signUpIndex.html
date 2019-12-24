@@ -1,28 +1,67 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<title>Sign Up</title>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="signUpStyle.css">
 </head>
+
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav-bar">
-		<a class="navbar-brand" href="../mainTaskIndex.html"><img src="../Images/logo1.png" alt="" id="logo-image"></a>
-	</nav>
-	<div id="parent-div">
-		<div id="input-login-div">
-			<span>Enter login</span>
-			<input type="text" id="input-login-field">
-		</div>
-		<div id="input-password-div">
-			<span>Enter password</span>
-			<input type="text" id="input-password-field">
-		</div>
-		<button id="submit-button">submit</button>
-	</div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light" id="nav-bar">
+        <a class="navbar-brand" href="../mainTaskIndex.html"><img src="../Images/logo1.png" alt="" id="logo-image"></a>
+    </nav>
+    <form class="container">
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="input-name">Name</label>
+                <input type="text" class="form-control" id="input-name" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="input-surname">Surname</label>
+                <input type="text" class="form-control" id="input-surname" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="input-nickname">Nickname</label>
+                <input type="text" class="form-control" id="input-nickname" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-6">
+                <label for="input-email">Email</label>
+                <input type="email" class="form-control" id="input-email" required>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-md-4">
+                <label for="input-password">Password</label>
+                <input type="password" class="form-control" id="input-password" required>
+            </div>
+            <div class="form-group col-md-4">
+                <label for="input-password2">Submit Password</label>
+                <input type="password" class="form-control" id="input-password2" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="gridCheck">
+                <label class="form-check-label" for="gridCheck">
+                    Check me out
+                </label>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-info" id="submit-button">Sign in</button>
+    </form>
+    <span id="confirmed">
+		<img src="../Images/success.png" alt="" id="image-success">
+		<p id="text-message">Registration complete</p>
+    </span>
 </body>
 <script src="signUpScript.js" type="text/javascript"></script>
+
 </html>

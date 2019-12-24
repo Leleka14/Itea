@@ -4,4 +4,14 @@
 
 #login-and-signup {
     list-style-type: none;
+    display: none;
+}
+
+#exit{
+    list-style-type: none;
+    display: none;
+}
+
+#exit:hover{
+	cursor: pointer;
 }
