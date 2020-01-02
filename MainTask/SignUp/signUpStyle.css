@@ -1,0 +1,27 @@
+#logo-image {
+    width: 200px;
+}
+
+#parent-div{
+	text-align: center;
+}
+
+#confirmed{
+	text-align: center;
+	color: #7BBF6A;
+	transition: all 5s ease;
+	display: none;
+	font-size: 20px;	
+}
+
+#image-success{
+	width: 300px;
+
+}
+
+img{
+  max-width:180px;
+}
+input[type=file]{
+	
+}
